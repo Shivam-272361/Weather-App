@@ -1,0 +1,84 @@
+body{
+    font-family: 'poppins', sans-serif;
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(173, 249, 10, 0.379);
+
+}
+.weatherforecast{
+    margin: 20px;
+}
+.cityinput{
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 2px solid hsla(232, 74%, 8%, 0.181);
+    border-radius: 10px;
+    margin: 10px;
+    width: 300px;
+}
+button{
+    padding: 10px;
+    color: rgb(251, 255, 0);
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(155, 35, 35, 0.785);
+
+}
+button:hover{
+     background-color: rgba(190, 139, 139, 0.986);
+}
+.container {
+  padding: 2rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.2),
+    0 10px 15px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.06);  
+  margin: 4em;
+  border: 2px solid black;
+  min-width: 20em;
+  height: fit-content;
+  z-index: 2;
+  transform: translateY(-4px);      
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container:hover {
+  transform: translateY(-10px);      /* More pop when hovered */
+  box-shadow:
+    0 20px 30px rgba(0, 0, 0, 0.2),
+    0 10px 15px rgba(0, 0, 0, 0.1);
+}
+.emoji{
+    margin-top: 4px;
+    font-size: 5em;
+}
+.cityname{
+    font-size: 2.5rem;
+    margin: 25px;
+    color: rgba(181, 16, 16, 0.992);
+    font-weight: bolder;
+}
+#others{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px;
+    color: rgb(248, 255, 251);
+}
+.errordisplay{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px;
+}
