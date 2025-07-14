@@ -5,6 +5,8 @@ const apiKey="943c11d294da87bf303c64ca465b1a6e";
 weatherForm.addEventListener("submit",async event=>{
 
         event.preventDefault();
+       
+        container.style.display = "none";
         const city= cityInput.value;
         if(city){
             try {
@@ -64,6 +66,8 @@ function displayData(data) {
       ]
     }
   } = data;
+   container.style.display = "flex";
+  document.getElementById("errorDisplay").textContent = "";
   const cityDisplay=document.getElementById("cityname");
   const weatherEmoji=document.getElementById("emoji");
   const tempDisplay=document.getElementById("temperature");
@@ -75,7 +79,7 @@ function displayData(data) {
   const sunriseDisplay=document.getElementById("sunrise");
   const sunsetDisplay=document.getElementById("sunset");
   const pressureDisplay=document.getElementById("pressure");
-  container.style.display="flex";
+  
   cityDisplay.textContent=city;
   tempDisplay.textContent=`Temperature : ${(temp-273.15).toFixed(2)}°C`;
   weatherDisplay.textContent=`Weather : ${description}`;
@@ -92,6 +96,10 @@ function displayData(data) {
   sunsetDisplay.textContent=`Sunset 🌇 :  ${sunSet}`;
   pressureDisplay.textContent=`Pressure : ${pressure} hPa`;
   weatherEmoji.textContent=getWeatherEmoji(id);
+  document.body.style.backgroundImage = `url("https://source.unsplash.com/1600x900/?${city}")`;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundRepeat = 'no-repeat';
 }
 
 function getWeatherEmoji(weatherId){
@@ -173,11 +181,11 @@ function getAQICategory(aqi) {
   return "Severe";
 }
 
-function displayError(message){
-    const errorDisplay=document.createElement("p");
-    errorDisplay.textContent=message;
-    errorDisplay.classList.add("errordisplay");
-    container.textContent="";
-    container.style.display="flex";
-    container.appendChild(errorDisplay)
+function displayError(message) {
+  const errorDisplay = document.getElementById("errorDisplay");
+  if (errorDisplay) {
+    errorDisplay.textContent = message;
+    errorDisplay.style.color = "red";
+  }
+  container.style.display = "flex";
 }

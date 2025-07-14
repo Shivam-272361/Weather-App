@@ -7,7 +7,20 @@ body{
     justify-content: center;
     align-items: center;
     background-color: rgba(173, 249, 10, 0.379);
+    background-blend-mode: overlay;
+    transition: background-image 0.5s ease-in-out;
 
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* change to 0.4 or 0.5 if needed */
+  z-index: -1;
 }
 .weatherforecast{
     margin: 20px;
